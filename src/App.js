@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
 import './App.css';
+import { MainBanner } from './components/UI/MainBanner';
+import { HeaderTop } from './components/UI/HeaderTop';
+import { HeaderContent } from './components/UI/HeaderContent';
+import { Features } from './components/UI/Features';
+import { Promotions } from './components/UI/Promotions';
+import { Categories } from './components/UI/Categories';
+import { ProductCategory } from './components/Products/ProductCategory';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Fragment>
+      <MainBanner></MainBanner>
+      <header className="header header--standard header--market-place-4" data-sticky="true">        
+        <HeaderTop></HeaderTop>
+        <HeaderContent></HeaderContent>
       </header>
-    </div>
+      <div id="homepage-6">
+        <Features></Features>
+        <Promotions></Promotions>
+        <Categories></Categories>
+      </div>
+      <div class="ps-section--gray">
+        <div class="container">
+          <ProductCategory></ProductCategory>
+        </div>
+      </div>
+    </Fragment>  
   );
 }
 
